@@ -1,0 +1,40 @@
+body{
+    background-color: #111111;
+    color: #dddddd;
+}
+
+#lmc{
+    background-color: #111111;
+    float: left;
+    
+    
+ 
+}
+
+input{
+    
+    background-color: #333333;
+    color: #dddddd;
+    border-color: #444444;
+}
+
+button{
+
+    
+    
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+    font-family:Courier, monospace;
+    background-color: #222222;
+    color:#dddddd;
+    width: 260px;
+    height: 300px;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    
+}
+

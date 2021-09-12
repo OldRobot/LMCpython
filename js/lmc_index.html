@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Little Man Computer</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="LMC.JS" charset="utf-8">
+
+  </script>
+
+</head>
+
+<body bgcolor="#DDDDDD">
+<div id="codewindows">
+    <div id="lmc">
+        LMC 1
+        <br>
+    <textarea id="code1" rows="30" cols="70">LDA TWENTY&#13LOOP SUB ONE&#13
+      SUB ONE
+      OUT
+      BRZ STOP
+      BRA LOOP
+      STOP HLT
+      ONE     DAT 001
+      TWENTY  DAT 020
+    </textarea>
+
+      <br>
+      <button type="button" name="button" onclick="reset1()"> compile and run</button>
+      <br>
+      <label>In:</label>
+      <input id="input1" type="text">
+      <br>
+      <label>Out:</label>
+      <input id="output1" type="text">
+      <p id="acc1">ACC:</p>
+<p id="pc1">PC:</p>
+<p id="cir1">CIR:</p>
+<p id="idel1">Idel: 100%</p>
+     </div>
+     
+   </div>
+
+<div id="lmc">
+    LMC 2
+    <br>
+<textarea id="code2" rows="30" cols="70">
+  LDA TWENTY
+  LOOP SUB ONE
+  SUB ONE
+  OUT
+  BRZ STOP
+  BRA LOOP
+  STOP HLT
+  ONE     DAT 001
+  TWENTY  DAT 020
+</textarea>
+<br>
+<button type="button" name="button" onclick="reset2()"> compile and run</button>
+<br>
+In:<input id="input2" type="text">
+<br>
+Out:<input id="output2" type="text">
+<p id="acc2">ACC:</p>
+<p id="pc2">PC:</p>
+<p id="cir2">CIR:</p>
+<p id="idel2">Idel: 100%</p>
+
+</div>
+</div>
+<br>
+
+
+
+
+  <script type="text/javascript">
+
+//these are for just 1 computer
+
+function reset1(){
+  let str = document.getElementById("code1").value;
+  let code =(assemeble(str, false));
+  console.clear();
+  console.log(code);
+  lmc1 = new LMC(code,false,100,1);
+  lmc1.setOutput("output1")
+  lmc1.run();
+}
+
+
+function reset2(){
+  let str = document.getElementById("code2").value;
+  let code =(assemeble(str, false));
+  console.clear();
+  lmc2 = new LMC(code,false,100,2);
+  lmc2.run();
+}
+
+
+
+  </script>
+
+</body>
+
+</html>
